@@ -218,9 +218,6 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
                   <li className="price__hero-item">
                     Ціна, грн.
                   </li>
-                  <li className="price__hero-item">
-                    Рекомендована ціна, грн.
-                  </li>
                 </ul>
                   {funt.map((items) => (
                     <li key={items.sys.id} className="price__item">
@@ -286,9 +283,6 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
                 <ul className="price__hero-list">
                   <li className="price__hero-item">
                     Ціна, грн.
-                  </li>
-                  <li className="price__hero-item">
-                    Рекомендована ціна, грн.
                   </li>
                 </ul>
                   {tbb.map((items) => (
