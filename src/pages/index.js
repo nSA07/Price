@@ -124,10 +124,10 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
                       <div className="price__item-method">
                       </div>
                       <div className="price__item-cost">
-                        {items.fields.price}$
+                        {items.fields.price}₴
                       </div>
                       <div className="price__item-cost">
-                        {items.fields.recomendatePrice}$
+                        {items.fields.recomendatePrice}₴
                       </div>
                     </div>
                   </li>
@@ -184,10 +184,10 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
                         <div className="price__item-method">
                         </div>
                         <div className="price__item-cost">
-                        {items.fields.price}$
+                        {items.fields.price}₴
                         </div>
                         <div className="price__item-cost">
-                        {items.fields.recomendatePrice}$
+                        {items.fields.recomendatePrice}₴
                         </div>
                       </div>
                     </li>
@@ -260,7 +260,7 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
                           )}
                         </div>
                         <div className="price__item-cost">
-                        {items.fields.price}$
+                        {items.fields.price}₴
                         </div>
                       </div>
                     </li>
@@ -326,7 +326,7 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
                           )}
                         </div>
                         <div className="price__item-cost">
-                        {items.fields.price}$
+                        {items.fields.price}₴
                         </div>
                       </div>
                     </li>
@@ -396,10 +396,10 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
                       </div>
                     )}
                     <div className="price__item-cost">
-                      {item.fields.price}$
+                      {item.fields.price}₴
                     </div>
                     <div className="price__item-cost">
-                      {item.fields.recommendationPrice}$
+                      {item.fields.recommendationPrice}₴
                     </div>
                   </div>
                 </li>
