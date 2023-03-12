@@ -1,0 +1,35 @@
+#__next {
+    overflow: hidden;
+}
+
+.wrapper {
+    max-width: 1035px;
+    margin: 0 auto;
+}
+
+.descriptions {
+    margin-top: 45px;
+}
+
+.bg-bf {
+    background-color: #C1E4F0;
+    border-radius: 116px 0 0 116px;
+}
+
+.price {
+    &__hero-wrap {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: flex;
+        gap: 88px;
+        padding: 0 20px 9px 0;
+        border-bottom: 1px dashed grey;
+    }
+
+    &__hero-item {
+        font-size: 9px;
+        line-height: 10.8px;
+        font-weight: 600;
+    }
+}

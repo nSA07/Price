@@ -38,6 +38,7 @@ export async function getServerSideProps() {
 }
 
 export default function Home({pusk, bag, funt, bf, tbb}) {
+
   return (
     <>
       <Head>
@@ -48,9 +49,7 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
       </Head>
       <div className="wrapper">
         <header className="header">
-          <div className="header__wrap">
-            <div className="header__bg"></div>
-            <div className="header__container">
+          <div className="header__container">
               <div className="header__content">
                 <p className="header__content-descriptions">
                   Смажимо та відправляємо замовлення з понеділка по п’ятницю. Відправимо у той
@@ -72,7 +71,6 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
                 </div>
               </div>
             </div>
-          </div>
         </header>
         <main className="page">
           <section className="pusk">
@@ -93,17 +91,17 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
               <div className="descriptions">
                 Мінімальне замовлення 10 упаковок. Ціна продажу у кав’ярні 225 гривень. Одна упаковка – 5 порцій кави .Срок придатності 6 місяців з дати виробництва, вказана на саше та на коробці.
               </div>
-              <ul className="price__list">
-                <ul className="price__hero-list">
+              <ul className="pusk__list">
+                <div className='price__hero-wrap'>
                   <li className="price__hero-item">
                     Ціна, грн.
                   </li>
                   <li className="price__hero-item">
-                    Рекомендована ціна, грн.
+                    Рекомендована<br /> ціна, грн.
                   </li>
-                </ul>
+                </div>
                 {pusk.map((items) => (
-                  <li key={items.sys.id} className="price__item">
+                  <li key={items.sys.id} className="pusk__item">
                       {items.fields.new && (
                         <Image
                           className='new'
@@ -111,22 +109,21 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
                           alt="new"
                         />
                       )}
-                    <div className="price__item-inner">
-                      <div className="price__item-name">
+                    <div className="pusk__item-inner">
+                      <div className="pusk__item-name">
                         <span>{items.fields.name}</span>
-                        <p>Розчинна кава:<br />{items.fields.country}</p>
+                        <p>Розчинна кава:</p>
+                        <p>{items.fields.country}</p>
                       </div>
-                      <div className="price__item-descriptions">
-                        {items.fields.descriptions}
+                      <div className="pusk__item-descriptions">
+                        {items.fields.description}
                       </div>
                     </div>
-                    <div className="price__item-wrap">
-                      <div className="price__item-method">
-                      </div>
-                      <div className="price__item-cost">
+                    <div className="pusk__item-wrap">
+                      <div className="pusk__item-cost">
                         {items.fields.price}₴
                       </div>
-                      <div className="price__item-cost">
+                      <div className="pusk__item-cost">
                         {items.fields.recomendatePrice}₴
                       </div>
                     </div>
@@ -153,17 +150,17 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
               <div className="descriptions">
                 Мінімальне замовлення 10 упаковок. Ціна продажу у кав’ярні 225 гривень. Одна упаковка – 5 порцій кави .Срок придатності 6 місяців з дати виробництва, вказана на саше та на коробці.
               </div>
-              <ul className="price__list">
-                <ul className="price__hero-list">
+              <ul className="bag__list">
+                <div className='price__hero-wrap'>
                   <li className="price__hero-item">
                     Ціна, грн.
                   </li>
                   <li className="price__hero-item">
-                    Рекомендована ціна, грн.
+                    Рекомендована<br /> ціна, грн.
                   </li>
-                </ul>
-                  {bag.map((items) => (
-                    <li key={items.sys.id} className="price__item">
+                </div>
+                {bag.map((items) => (
+                  <li key={items.sys.id} className="bag__item">
                       {items.fields.new && (
                         <Image
                           className='new'
@@ -171,27 +168,23 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
                           alt="new"
                         />
                       )}
-                      <div className="price__item-inner">
-                        <div className="price__item-name">
-                          <span>{items.fields.name}</span>
-                          <p>{items.fields.subtitle}</p>
-                        </div>
-                        <div className="price__item-descriptions">
-                          {items.fields.descriptions} 
-                        </div>
-                      </div>
-                      <div className="price__item-wrap">
-                        <div className="price__item-method">
-                        </div>
-                        <div className="price__item-cost">
+                    <div className="bag__item-name">
+                      <span>{items.fields.name}</span>
+                      <p>Кава в пірамідах</p>
+                    </div>
+                    <div className="bag__item-descriptions">
+                        {items.fields.description}
+                    </div>
+                    <div className="bag__item-wrap">
+                      <div className="bag__item-cost">
                         {items.fields.price}₴
-                        </div>
-                        <div className="price__item-cost">
-                        {items.fields.recomendatePrice}₴
-                        </div>
                       </div>
-                    </li>
-                  ))}
+                      <div className="bag__item-cost">
+                        {items.fields.recomendatePrice}₴
+                      </div>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </div>
           </section>
@@ -213,14 +206,17 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
               <div className="descriptions">
                 Мінімальне замовлення 10 упаковок. Ціна продажу у кав’ярні 225 гривень. Одна упаковка – 5 порцій кави .Срок придатності 6 місяців з дати виробництва, вказана на саше та на коробці.
               </div>
-              <ul className="price__list">
-                <ul className="price__hero-list">
-                  <li className="price__hero-item">
-                    Ціна, грн.
-                  </li>
-                </ul>
+              <ul className="coffee__list">
+                <div className='price__hero-wrap'>
+                    <li className="price__hero-item">
+                      Ціна, грн.
+                    </li>
+                    <li className="price__hero-item">
+                      Рекомендована<br /> ціна, грн.
+                    </li>
+                  </div>
                   {funt.map((items) => (
-                    <li key={items.sys.id} className="price__item">
+                    <li key={items.sys.id} className="coffee__item">
                       {items.fields.new && (
                         <Image
                           className='new'
@@ -228,41 +224,38 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
                           alt="new"
                         />
                       )}
-                      <div className="price__item-inner">
-                        <div className="price__item-name">
-                          <span>{items.fields.name}</span>
-                          <p>{items.fields.country}</p>
-                        </div>
-                        <div className="price__item-descriptions">
-                          {items.fields.description}
-                        </div>
+                      <div className="coffee__item-name">
+                        <span>{items.fields.name}</span>
+                        <p>{items.fields.country1}</p>
+                        <p>{items.fields.country2}</p>
                       </div>
-                      <div className="price__item-wrap">
-                        <div className="price__item-method">
-                        {items.fields.processing} <span>{items.fields.year}</span>
-                        </div>
-                        <div className="price__item-roast">
-                          {items.fields.espresso && (
-                          <Image 
-                            src={"http:" + items.fields.espresso.fields.file.url}
-                            width={items.fields.espresso.fields.file.details.image.width}
-                            height={items.fields.espresso.fields.file.details.image.height}
-                            alt="espr" 
-                          />
-                          )}
-                          {items.fields.filter && (
-                          <Image 
-                            src={"http:" + items.fields.filter.fields.file.url}
-                            width={items.fields.filter.fields.file.details.image.width}
-                            height={items.fields.filter.fields.file.details.image.height}
-                            alt="espr" 
-                          />
-                          )}
-                        </div>
-                        <div className="price__item-cost">
+                      <div className="coffee__item-descriptions">
+                        {items.fields.description}
+                      </div>
+                      <div className="coffee__item-method">
+                      {items.fields.processing} <span>{items.fields.year}</span>
+                      </div>
+                      <div className="coffee__item-roast">
+                        {items.fields.espresso && (
+                        <Image 
+                          src={"http:" + items.fields.espresso.fields.file.url}
+                          width={items.fields.espresso.fields.file.details.image.width}
+                          height={items.fields.espresso.fields.file.details.image.height}
+                          alt="espr" 
+                        />
+                        )}
+                        {items.fields.filter && (
+                        <Image 
+                          src={"http:" + items.fields.filter.fields.file.url}
+                          width={items.fields.filter.fields.file.details.image.width}
+                          height={items.fields.filter.fields.file.details.image.height}
+                          alt="espr" 
+                        />
+                        )}
+                      </div>
+                      <div className="coffee__item-cost">
                         {items.fields.price}₴
                         </div>
-                      </div>
                     </li>
                   ))}
               </ul>
@@ -279,58 +272,58 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
               <div className="descriptions">
                 Мінімальне замовлення 10 упаковок. Ціна продажу у кав’ярні 225 гривень. Одна упаковка – 5 порцій кави .Срок придатності 6 місяців з дати виробництва, вказана на саше та на коробці.
               </div>
-              <ul className="price__list">
-                <ul className="price__hero-list">
+              <ul className="coffee__list">
+                <div className='price__hero-wrap'>
                   <li className="price__hero-item">
                     Ціна, грн.
                   </li>
-                </ul>
-                  {tbb.map((items) => (
-                    <li key={items.sys.id} className="price__item">
-                      {items.fields.new && (
-                        <Image
-                          className='new'
-                          src={NEW}
-                          alt="new"
-                        />
+                  <li className="price__hero-item">
+                    Рекомендована<br /> ціна, грн.
+                  </li>
+                </div>
+                {tbb.map((items) => (
+                  <li key={items.sys.id} className="coffee__item">
+                    {items.fields.new && (
+                      <Image
+                        className='new'
+                        src={NEW}
+                        alt="new"
+                      />
+                    )}
+                    <div className="coffee__item-name">
+                      <span>{items.fields.name}</span>
+                      <p>{items.fields.country1}</p>
+                      <p>{items.fields.country2}</p>
+                    </div>
+                    <div className="coffee__item-descriptions">
+                      {items.fields.description}
+                    </div>
+                    <div className="coffee__item-method">
+                    {items.fields.processing} <span>{items.fields.year}</span>
+                    </div>
+                    <div className="coffee__item-roast">
+                      {items.fields.espresso && (
+                      <Image 
+                        src={"http:" + items.fields.espresso.fields.file.url}
+                        width={items.fields.espresso.fields.file.details.image.width}
+                        height={items.fields.espresso.fields.file.details.image.height}
+                        alt="espr" 
+                      />
                       )}
-                      <div className="price__item-inner">
-                        <div className="price__item-name">
-                          <span>{items.fields.name}</span>
-                          <p>{items.fields.country}</p>
-                        </div>
-                        <div className="price__item-descriptions">
-                          {items.fields.description}
-                        </div>
+                      {items.fields.filter && (
+                      <Image 
+                        src={"http:" + items.fields.filter.fields.file.url}
+                        width={items.fields.filter.fields.file.details.image.width}
+                        height={items.fields.filter.fields.file.details.image.height}
+                        alt="espr" 
+                      />
+                      )}
+                    </div>
+                    <div className="coffee__item-cost">
+                      {items.fields.price}₴
                       </div>
-                      <div className="price__item-wrap">
-                        <div className="price__item-method">
-                        {items.fields.processing} <span>{items.fields.year}</span>
-                        </div>
-                        <div className="price__item-roast">
-                          {items.fields.espresso && (
-                          <Image 
-                            src={"http:" + items.fields.espresso.fields.file.url}
-                            width={items.fields.espresso.fields.file.details.image.width}
-                            height={items.fields.espresso.fields.file.details.image.height}
-                            alt="espr" 
-                          />
-                          )}
-                          {items.fields.filter && (
-                          <Image 
-                            src={"http:" + items.fields.filter.fields.file.url}
-                            width={items.fields.filter.fields.file.details.image.width}
-                            height={items.fields.filter.fields.file.details.image.height}
-                            alt="espr" 
-                          />
-                          )}
-                        </div>
-                        <div className="price__item-cost">
-                        {items.fields.price}₴
-                        </div>
-                      </div>
-                    </li>
-                  ))}
+                  </li>
+                ))}
               </ul>
             </div>
 			    </section>
@@ -353,59 +346,57 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
               <div className="descriptions">
                 Мінімальне замовлення один ящик (12 пляшок, можнa в асортименті). Доставка здійснюється за рахунок покупця. Замовлення, прийняті до 16 години, відправляємо у той же день, з понеділка по п’ятницю.
               </div>
-              <ul className="price__list bg-bf">
-                <span className="price__list-description">bottle 0,33 L</span>
-                <ul className="price__hero-list">
+            </div>
+            <ul className="bf__list bg-bf">
+              <div className="bf__container-second">
+                <span className='bf__bottel'>bottle 0,33 L</span>
+                <div className='price__hero-wrap'>
                   <li className="price__hero-item">
                     Ціна, грн.
                   </li>
                   <li className="price__hero-item">
-                    Рекомендована ціна, грн.
+                    Рекомендована<br /> ціна, грн.
                   </li>
-                </ul>
+                </div>
                 {bf.map((item) => (
-                <li key={item.sys.id} className="price__item bf-line">
-                  <div className="price__item-inner">
-                    <div className="price__item-name">
-                      <span>{item.fields.name}</span>
-                    </div>
-                    <div className="price__item-descriptions">
-                      {item.fields.descriptions}
-                    </div>
+                <li key={item.sys.id} className="bf__item">
+                  <div className="bf__item-name">
+                    <span>{item.fields.name}</span>
                   </div>
-                  <div className="price__item-wrap">
-                    {item.fields.reality === true ? (
-                      <div className="price__item-reality">
-                        <div className="price__item-icon">
-                        <Image 
-                          src={Done}
-                          alt="done" 
-                        />
-                        </div>
-                        <span>Готовий до відправки</span>
+                  <div className="bf__item-descriptions">
+                    {item.fields.description}
+                  </div>
+                  {item.fields.reality === true ? (
+                    <div className="bf__item-reality">
+                      <div className="bf__item-icon">
+                      <Image 
+                        src={Done}
+                        alt="done" 
+                      />
                       </div>
+                      <span>Готовий до відправки</span>
+                    </div>
                     ) : (
-                      <div className="price__item-reality">
-                        <div className="price__item-icon">
-                        <Image  
-                          src={None}
-                          alt="none" 
-                        />
-                        </div>
-                        <span>Нємає в наявності</span>
+                    <div className="bf__item-reality">
+                      <div className="bf__item-icon">
+                      <Image  
+                        src={None}
+                        alt="none" 
+                      />
                       </div>
+                      <span>Нємає в наявності</span>
+                    </div>
                     )}
-                    <div className="price__item-cost">
+                    <div className="bf__item-cost">
                       {item.fields.price}₴
                     </div>
-                    <div className="price__item-cost">
-                      {item.fields.recommendationPrice}₴
+                    <div className="bf__item-cost">
+                      {item.fields.recomendatePrice}₴
                     </div>
-                  </div>
                 </li>
                 ))}
-              </ul>
-            </div>
+              </div>
+            </ul>
           </section>
         </main>
         <footer className="footer">

@@ -1,0 +1,78 @@
+.bag {
+
+    &__inner {
+        width: 100%;
+        height: 255px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        padding: 0 58px 0 67px;
+        border-radius: 60px;
+        background-color: #164194;
+        position: relative;
+    }
+
+    &__img {
+        position: absolute;
+        width: 460px;
+        height: 337px;
+        top: -55px;
+        right: 50px;
+    }
+
+    &__logo {
+        width: 175px;
+    }
+
+    &__list {
+        position: relative;
+        margin-top: 15px;
+    }
+
+    &__item {
+        display: flex;
+        padding: 44px 28px 28px 37px;
+    }
+
+    &__item-inner {
+        display: flex;
+        gap: 95px;
+    }
+
+    &__item-name {
+        width: 185px;
+        span {
+            font-size: 38px;
+            line-height: 46px;
+            font-weight: 600;
+        }
+        p:first-child {
+            padding-top: 20px;
+        }
+        p {
+            padding-top: 21px;
+            font-size: 16px;
+            line-height: 21px;
+            font-weight: 400;
+        }
+    }
+
+    &__item-descriptions {
+        flex: 1;
+        padding: 0 134px 0 44px;
+        font-size: 14px;
+        line-height: 16.8px;
+        font-weight: 400;
+    }
+
+    &__item-wrap {
+        display: flex;
+        gap: 53px;
+    }
+
+    &__item-cost {
+        font-size: 30.7px;
+        line-height: 36.8px;
+        font-weight: 500;
+    }
+}
