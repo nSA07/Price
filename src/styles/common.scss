@@ -16,6 +16,21 @@
     border-radius: 116px 0 0 116px;
 }
 
+.new {
+    position: absolute;
+    top: 0;
+    left: -30px;
+    padding: 20px 12px;
+    background-color: #090400;
+    border-radius: 50%;
+    span {
+        color: #fff;
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: 700;
+    }
+}
+
 .price {
     &__hero-wrap {
         position: absolute;

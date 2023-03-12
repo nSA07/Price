@@ -35,6 +35,7 @@
     }
 
     &__item {
+        position: relative;
         display: flex;
         padding: 44px 28px 28px 37px;
         gap: 130px;

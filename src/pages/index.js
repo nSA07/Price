@@ -103,11 +103,9 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
                 {pusk.map((items) => (
                   <li key={items.sys.id} className="pusk__item">
                       {items.fields.new && (
-                        <Image
-                          className='new'
-                          src={NEW}
-                          alt="new"
-                        />
+                        <div className='new'>
+                          <span>New</span>
+                        </div>
                       )}
                     <div className="pusk__item-inner">
                       <div className="pusk__item-name">
@@ -162,11 +160,9 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
                 {bag.map((items) => (
                   <li key={items.sys.id} className="bag__item">
                       {items.fields.new && (
-                        <Image
-                          className='new'
-                          src={NEW}
-                          alt="new"
-                        />
+                      <div className='new'>
+                        <span>New</span>
+                      </div>
                       )}
                     <div className="bag__item-name">
                       <span>{items.fields.name}</span>
@@ -218,11 +214,9 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
                   {funt.map((items) => (
                     <li key={items.sys.id} className="coffee__item">
                       {items.fields.new && (
-                        <Image
-                          className='new'
-                          src={NEW}
-                          alt="new"
-                        />
+                      <div className='new'>
+                        <span>New</span>
+                      </div>
                       )}
                       <div className="coffee__item-name">
                         <span>{items.fields.name}</span>
@@ -284,11 +278,9 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
                 {tbb.map((items) => (
                   <li key={items.sys.id} className="coffee__item">
                     {items.fields.new && (
-                      <Image
-                        className='new'
-                        src={NEW}
-                        alt="new"
-                      />
+                    <div className='new'>
+                      <span>New</span>
+                    </div>
                     )}
                     <div className="coffee__item-name">
                       <span>{items.fields.name}</span>

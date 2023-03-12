@@ -47,6 +47,7 @@
     }
 
     &__item {
+        position: relative;
         display: grid;
         grid-template-columns: 134px 370px 167px 120px 102px;
         padding: 38px 0;

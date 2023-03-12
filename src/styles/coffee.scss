@@ -35,6 +35,7 @@
     }
 
     &__item {
+        position: relative;
         display: grid;
         grid-template-columns: 240px 310px 91px auto auto;
         padding: 44px 28px 28px 37px;
