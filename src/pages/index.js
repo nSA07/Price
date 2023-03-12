@@ -203,55 +203,52 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
                 Мінімальне замовлення 10 упаковок. Ціна продажу у кав’ярні 225 гривень. Одна упаковка – 5 порцій кави .Срок придатності 6 місяців з дати виробництва, вказана на саше та на коробці.
               </div>
               <ul className="coffee__list">
-                <div className='price__hero-wrap'>
-                    <li className="price__hero-item">
+                <div className='coffee__hero-wrap'>
+                    <li className="coffee__hero-item">
                       Ціна, грн.
                     </li>
-                    <li className="price__hero-item">
-                      Рекомендована<br /> ціна, грн.
-                    </li>
-                  </div>
-                  {funt.map((items) => (
-                    <li key={items.sys.id} className="coffee__item">
-                      {items.fields.new && (
-                      <div className='new'>
-                        <span>New</span>
-                      </div>
+                </div>
+                {funt.map((items) => (
+                  <li key={items.sys.id} className="coffee__item">
+                    {items.fields.new && (
+                    <div className='new'>
+                      <span>New</span>
+                    </div>
+                    )}
+                    <div className="coffee__item-name">
+                      <span>{items.fields.name}</span>
+                      <p>{items.fields.country1}</p>
+                      <p>{items.fields.country2}</p>
+                    </div>
+                    <div className="coffee__item-descriptions">
+                      {items.fields.description}
+                    </div>
+                    <div className="coffee__item-method">
+                    {items.fields.processing} <span>{items.fields.year}</span>
+                    </div>
+                    <div className="coffee__item-roast">
+                      {items.fields.espresso && (
+                      <Image 
+                        src={"http:" + items.fields.espresso.fields.file.url}
+                        width={items.fields.espresso.fields.file.details.image.width}
+                        height={items.fields.espresso.fields.file.details.image.height}
+                        alt="espr" 
+                      />
                       )}
-                      <div className="coffee__item-name">
-                        <span>{items.fields.name}</span>
-                        <p>{items.fields.country1}</p>
-                        <p>{items.fields.country2}</p>
+                      {items.fields.filter && (
+                      <Image 
+                        src={"http:" + items.fields.filter.fields.file.url}
+                        width={items.fields.filter.fields.file.details.image.width}
+                        height={items.fields.filter.fields.file.details.image.height}
+                        alt="espr" 
+                      />
+                      )}
+                    </div>
+                    <div className="coffee__item-cost">
+                      {items.fields.price}₴
                       </div>
-                      <div className="coffee__item-descriptions">
-                        {items.fields.description}
-                      </div>
-                      <div className="coffee__item-method">
-                      {items.fields.processing} <span>{items.fields.year}</span>
-                      </div>
-                      <div className="coffee__item-roast">
-                        {items.fields.espresso && (
-                        <Image 
-                          src={"http:" + items.fields.espresso.fields.file.url}
-                          width={items.fields.espresso.fields.file.details.image.width}
-                          height={items.fields.espresso.fields.file.details.image.height}
-                          alt="espr" 
-                        />
-                        )}
-                        {items.fields.filter && (
-                        <Image 
-                          src={"http:" + items.fields.filter.fields.file.url}
-                          width={items.fields.filter.fields.file.details.image.width}
-                          height={items.fields.filter.fields.file.details.image.height}
-                          alt="espr" 
-                        />
-                        )}
-                      </div>
-                      <div className="coffee__item-cost">
-                        {items.fields.price}₴
-                        </div>
-                    </li>
-                  ))}
+                  </li>
+                ))}
               </ul>
             </div>
 			    </section>
@@ -267,13 +264,10 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
                 Мінімальне замовлення 10 упаковок. Ціна продажу у кав’ярні 225 гривень. Одна упаковка – 5 порцій кави .Срок придатності 6 місяців з дати виробництва, вказана на саше та на коробці.
               </div>
               <ul className="coffee__list">
-                <div className='price__hero-wrap'>
-                  <li className="price__hero-item">
-                    Ціна, грн.
-                  </li>
-                  <li className="price__hero-item">
-                    Рекомендована<br /> ціна, грн.
-                  </li>
+                <div className='coffee__hero-wrap'>
+                    <li className="coffee__hero-item">
+                      Ціна, грн.
+                    </li>
                 </div>
                 {tbb.map((items) => (
                   <li key={items.sys.id} className="coffee__item">
