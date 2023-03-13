@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import HeadLogo from '../assets/header/header-img.svg'
 import CupImg from '../assets/pusk/pusk-cup.svg'
-import PuskImg from '../assets/pusk/pusk-img.svg'
+import PuskImg from '../assets/pusk/pusk-img.jpg'
 import TBBLogo from '../assets/bag/logo-bag.svg'
 import Octopus from '../assets/bag/octopus-bag.png'
 import LogoFunt from '../assets/coffee/logo-funt.svg'
@@ -15,7 +15,6 @@ import BFLogo from '../assets/bf/bf-logo.svg'
 import Orange from '../assets/bf/orange-logo.svg'
 import Done from '../assets/bf/done-icon.svg'
 import None from '../assets/bf/none-icon.svg'
-import NEW from '../assets/new.png'
 
 
 export async function getServerSideProps() {
@@ -81,12 +80,11 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
                       src={PuskImg}
                       alt='header-logo'
                   />
-                  <span>перша українська розчинна спешелті кава</span>
                 </div>
-                  <Image
-                      src={CupImg}
-                      alt='header-logo'
-                    />
+                <Image
+                    src={CupImg}
+                    alt='header-logo'
+                  />
               </div>
               <div className="descriptions">
                 Мінімальне замовлення 10 упаковок. Ціна продажу у кав’ярні 225 гривень. Одна упаковка – 5 порцій кави .Срок придатності 6 місяців з дати виробництва, вказана на саше та на коробці.
