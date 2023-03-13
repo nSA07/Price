@@ -31,7 +31,8 @@
 
     &__item {
         position: relative;
-        display: flex;
+        display: grid;
+        grid-template-columns: 210px 310px 119px 124px 66px;
         padding: 44px 28px 28px 37px;
     }
 
@@ -41,7 +42,6 @@
     }
 
     &__item-name {
-        width: 185px;
         span {
             font-size: 38px;
             line-height: 46px;
@@ -59,21 +59,25 @@
     }
 
     &__item-descriptions {
-        flex: 1;
-        padding: 0 134px 0 44px;
         font-size: 14px;
         line-height: 16.8px;
         font-weight: 400;
     }
 
-    &__item-wrap {
+    &__item-reality {
         display: flex;
-        gap: 53px;
+        gap: 8px;
+        span {
+            font-size: 14px;
+            line-height: 17px;
+            font-weight: 500;
+        }
     }
 
     &__item-cost {
+        font-family: 'Montserrat', sans-serif;
         font-size: 30.7px;
-        line-height: 36.8px;
+        line-height: 1;
         font-weight: 500;
     }
 }

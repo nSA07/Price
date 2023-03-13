@@ -54,7 +54,7 @@
     &__item {
         position: relative;
         display: grid;
-        grid-template-columns: 240px 310px 91px auto auto;
+        grid-template-columns: 230px 293px 120px auto auto;
         padding: 44px 28px 28px 37px;
     }
 
@@ -96,9 +96,10 @@
     }
 
     &__item-cost {
+        font-family: 'Montserrat', sans-serif;
         text-align: end;
         font-size: 30.7px;
-        line-height: 36.8px;
+        line-height: 1;
         font-weight: 500;
     }
 }

@@ -171,13 +171,32 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
                     <div className="bag__item-descriptions">
                         {items.fields.description}
                     </div>
-                    <div className="bag__item-wrap">
-                      <div className="bag__item-cost">
-                        {items.fields.price}₴
+                    {items.fields.reality === true ? (
+                    <div className="bag__item-reality">
+                      <div className="bag__item-icon">
+                      <Image 
+                        src={Done}
+                        alt="done" 
+                      />
                       </div>
-                      <div className="bag__item-cost">
-                        {items.fields.recomendatePrice}₴
+                      <span>Готовий<br /> до відправки</span>
+                    </div>
+                    ) : (
+                    <div className="bag__item-reality">
+                      <div className="bag__item-icon">
+                      <Image  
+                        src={None}
+                        alt="none" 
+                      />
                       </div>
+                      <span>Нємає<br /> в наявності</span>
+                    </div>
+                    )}
+                    <div className="bag__item-cost">
+                      {items.fields.price}₴
+                    </div>
+                    <div className="bag__item-cost">
+                      {items.fields.recomendatePrice}₴
                     </div>
                   </li>
                 ))}
@@ -347,7 +366,7 @@ export default function Home({pusk, bag, funt, bf, tbb}) {
                 {bf.map((item) => (
                 <li key={item.sys.id} className="bf__item">
                   <div className="bf__item-name">
-                    <span>{item.fields.name}</span>
+                    {item.fields.name}
                   </div>
                   <div className="bf__item-descriptions">
                     {item.fields.description}
